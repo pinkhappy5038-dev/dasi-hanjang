@@ -1,0 +1,171 @@
+:root {
+  --ink: #1E2A5A;
+  --ink-soft: #4A5585;
+  --page: #F4F7FF;
+  --white: #FFFFFF;
+  --lemon: #FFE45C;
+  --pink: #FF7AA2;
+  --mint: #3CC9A4;
+  --blue: #5B7CFA;
+  --orange: #FF9F43;
+  --display: 'Jua', system-ui, sans-serif;
+  --body: 'Gowun Dodum', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+[hidden] { display: none !important; }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 18px;
+  line-height: 1.7;
+  word-break: keep-all;
+}
+
+h1, h2, .brand, .btn, .chip { font-family: var(--display); font-weight: 400; }
+
+/* 첫 화면 */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 56px 20px 64px;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.brand { margin: 0 0 28px; font-size: 20px; color: var(--blue); }
+.hero h1 {
+  position: relative;
+  margin: 0 0 20px;
+  font-size: clamp(38px, 9vw, 64px);
+  line-height: 1.25;
+}
+.lead { position: relative; margin: 0 auto 32px; max-width: 26em; color: var(--ink-soft); }
+
+/* 넘어졌다가 다시 튀어 오르는 조약돌: 페이지에서 단 하나의 움직임 */
+.pebbles { position: absolute; inset: 0; pointer-events: none; }
+.hero > :not(.pebbles) { position: relative; z-index: 1; }
+.p {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  animation: drop 1.4s cubic-bezier(.3, 0, .3, 1) both;
+}
+.p1 { width: 54px; height: 42px; background: var(--pink);  left: -12px; top: 24%; animation-delay: .05s; border-radius: 55% 45% 50% 50%; }
+.p2 { width: 26px; height: 26px; background: var(--lemon); left: 18%; top: 62%; animation-delay: .25s; }
+.p3 { width: 70px; height: 50px; background: var(--mint);  right: -14px; top: 44%; animation-delay: .15s; border-radius: 48% 52% 45% 55%; }
+.p4 { width: 18px; height: 18px; background: var(--blue);  right: 20%; top: 12%; animation-delay: .35s; }
+.p5 { width: 34px; height: 30px; background: var(--orange); right: 12%; top: 70%; animation-delay: .45s; }
+.p6 { width: 14px; height: 14px; background: var(--pink);  left: 30%; top: 8%;  animation-delay: .55s; }
+@keyframes drop {
+  0%   { transform: translateY(-160px) rotate(-30deg); opacity: 0; }
+  45%  { transform: translateY(0) rotate(0); opacity: 1; }
+  62%  { transform: translateY(-28px) rotate(8deg); }
+  80%  { transform: translateY(0) rotate(0); }
+  90%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+.btn {
+  display: inline-block;
+  border: 3px solid var(--ink);
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--ink);
+  padding: 12px 22px;
+  font-size: 19px;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 0 var(--ink);
+  transition: transform .1s, box-shadow .1s;
+}
+.btn:active { transform: translateY(4px); box-shadow: 0 0 0 var(--ink); }
+.btn-main {
+  position: relative;
+  background: var(--pink);
+  color: var(--white);
+  font-size: 22px;
+  padding: 16px 30px;
+}
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+
+.preview { margin: 44px auto 0; width: min(240px, 70vw); }
+.preview figcaption { margin-top: 10px; font-size: 15px; color: var(--ink-soft); }
+
+/* 카드 */
+.card {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 3px solid var(--ink);
+}
+.card svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.card .text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18% 12%;
+  margin: 0;
+  text-align: center;
+  white-space: pre-line;
+  font-family: var(--display);
+  color: var(--ink);
+}
+.card-big .text { font-size: clamp(22px, 6vw, 32px); line-height: 1.5; }
+.card-mini .text { font-size: 15px; line-height: 1.45; padding: 18% 10%; }
+.card .tag {
+  position: absolute;
+  left: 0; right: 0; bottom: 6%;
+  text-align: center;
+  font-family: var(--body);
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+.card-mini .tag { display: none; }
+
+/* 마음 고르기 */
+main { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+section { padding: 48px 0; }
+h2 { margin: 0 0 20px; font-size: 30px; text-align: center; }
+.chips { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.chip {
+  border: 3px solid var(--ink);
+  border-radius: 999px;
+  padding: 12px 20px;
+  font-size: 19px;
+  color: var(--ink);
+  cursor: pointer;
+}
+.chip[aria-pressed="true"] { box-shadow: inset 0 0 0 3px var(--white); outline: 3px solid var(--ink); }
+
+.result { padding-top: 8px; }
+.card-big { width: min(420px, 100%); margin: 0 auto; }
+.actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
+.toast { min-height: 1.7em; margin: 14px 0 0; text-align: center; color: var(--ink-soft); }
+
+/* 모아 보기 */
+.group { margin-bottom: 36px; }
+.group h3 { margin: 0 0 12px; font-family: var(--display); font-weight: 400; font-size: 21px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 14px; }
+.grid button { padding: 0; border: 0; background: none; cursor: pointer; border-radius: 22px; }
+.grid .card { border-width: 2px; }
+.grid .card-mini .text { font-size: 13px; }
+
+.reviews { text-align: center; color: var(--ink-soft); }
+.reviews p { margin: 0; }
+
+footer { padding: 32px 20px 48px; text-align: center; color: var(--ink-soft); font-size: 15px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .p { animation: none; }
+  .btn { transition: none; }
+  html { scroll-behavior: auto; }
+}

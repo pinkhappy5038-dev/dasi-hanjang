@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>다시, 한 장</title>
+  <meta name="description" content="넘어졌다가 다시 시작하는 당신에게, 지금 마음에 맞는 응원 카드 한 장.">
+  <meta property="og:title" content="다시, 한 장">
+  <meta property="og:description" content="지금 내 마음에 맞는 응원 카드 한 장을 받아 보세요.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="pebbles" aria-hidden="true">
+      <span class="p p1"></span><span class="p p2"></span><span class="p p3"></span>
+      <span class="p p4"></span><span class="p p5"></span><span class="p p6"></span>
+    </div>
+    <p class="brand">다시, 한 장</p>
+    <h1>넘어진 자리에서도,<br>우리는 무언가를<br>줍고 일어나요.</h1>
+    <p class="lead">지금 마음을 고르면, 그 마음에 맞는 응원 카드를 한 장 건네 드려요.</p>
+    <a class="btn btn-main" href="#mood">내 마음에 맞는 카드 받기</a>
+    <figure class="preview">
+      <div class="card card-mini" id="preview"></div>
+      <figcaption>이런 카드를 받을 수 있어요</figcaption>
+    </figure>
+  </header>
+
+  <main>
+    <section id="mood" class="mood">
+      <h2>지금 마음은 어때요?</h2>
+      <div class="chips" id="chips"></div>
+    </section>
+
+    <section id="result" class="result" hidden>
+      <div class="card card-big" id="card" aria-live="polite"></div>
+      <div class="actions">
+        <button class="btn" id="next" type="button">다른 카드</button>
+        <button class="btn" id="save" type="button">저장하기</button>
+        <button class="btn" id="share" type="button">보내기</button>
+      </div>
+      <p class="toast" id="toast" role="status"></p>
+    </section>
+
+    <section class="all">
+      <h2>마음별로 모아 보기</h2>
+      <div id="all"></div>
+    </section>
+
+    <section class="reviews">
+      <h2>받아 본 사람들의 이야기</h2>
+      <p>아직 모으는 중이에요.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>오늘도 한 걸음, 다시 한 장.</p>
+  </footer>
+
+  <script src="cards.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
