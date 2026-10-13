@@ -1,9 +1,10 @@
+// 그림은 images/<id>.png (jpg·webp도 됨) 에 넣는다. 프롬프트는 docs/image-prompts.md
 // 카드 글은 예시 문장의 결만 참고해 새로 쓴 것이다. 출처·명언을 지어내지 않는다.
 window.MOODS = [
   {
     id: 'fall',
     label: '넘어졌을 때',
-    bg: '#FFE45C',
+    bg: '#FFF1B8',
     shapes: ['#FF7AA2', '#3CC9A4', '#5B7CFA'],
     cards: [
       '넘어진 건\n끝이 아니라\n잠깐 쉬어 가는 자리예요.',
@@ -16,7 +17,7 @@ window.MOODS = [
   {
     id: 'endure',
     label: '버티기 힘들 때',
-    bg: '#BFE8FF',
+    bg: '#DCEFFF',
     shapes: ['#FF9F43', '#FF7AA2', '#FFE45C'],
     cards: [
       '서툰 시간도\n당신을 키우는 중이에요.',
@@ -29,7 +30,7 @@ window.MOODS = [
   {
     id: 'rush',
     label: '조급하고 흔들릴 때',
-    bg: '#C9F2D9',
+    bg: '#DFF5E6',
     shapes: ['#FF7AA2', '#5B7CFA', '#FFB020'],
     cards: [
       '남의 속도를 재지 말고\n내 걸음을 세어 봐요.',
@@ -42,7 +43,7 @@ window.MOODS = [
   {
     id: 'lost',
     label: '나를 잃어버린 것 같을 때',
-    bg: '#FFD6E4',
+    bg: '#FFE3EC',
     shapes: ['#5B7CFA', '#FFB020', '#3CC9A4'],
     cards: [
       '길을 잃었다고 느낄 때\n진짜 내 길을\n찾기 시작해요.',
