@@ -26,11 +26,20 @@
 
   function cardHtml(card) {
     const m = card.mood;
-    const art = m.img
-      ? `<img src="${m.img.src}" alt="" loading="lazy">`
-      : '';
-    return `<div class="art" style="background:${m.shapes[0]}33">${art}</div>
+    const art = m.img ? `<img src="${m.img.src}" alt="" loading="lazy">` : sceneSvg(m.id);
+    return `<div class="art" aria-hidden="true">${art}</div>
       <p class="text">${esc(card.text)}</p><span class="tag">${m.label}</span>`;
+  }
+
+  // 그림 파일이 없으면 풍경 SVG를 이미지로 바꿔서 쓴다
+  function artImage(mood) {
+    if (mood.img) return Promise.resolve(mood.img);
+    return new Promise((ok, fail) => {
+      const img = new Image();
+      img.onload = () => ok(img);
+      img.onerror = fail;
+      img.src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(sceneSvg(mood.id))}`;
+    });
   }
 
   // 저장용: 같은 카드를 1080×1350 이미지로 다시 그린다
@@ -41,20 +50,16 @@
     cv.width = W * k; cv.height = H * k;
     const g = cv.getContext('2d');
     g.scale(k, k);
-    g.fillStyle = card.mood.bg;
+    g.fillStyle = '#FFFFFF';
     g.fillRect(0, 0, W, H);
-    const img = card.mood.img;
-    if (img) {
-      // object-fit: cover 와 같은 자르기
-      const s = Math.max(W / img.naturalWidth, ART_H / img.naturalHeight);
-      const sw = W / s, sh = ART_H / s;
-      g.drawImage(img, (img.naturalWidth - sw) / 2, (img.naturalHeight - sh) / 2, sw, sh, 0, 0, W, ART_H);
-    } else {
-      g.fillStyle = `${card.mood.shapes[0]}33`;
-      g.fillRect(0, 0, W, ART_H);
-    }
+    const img = await artImage(card.mood);
+    const iw = card.mood.img ? img.naturalWidth : 400, ih = card.mood.img ? img.naturalHeight : 300;
+    // object-fit: cover 와 같은 자르기
+    const sc = Math.max(W / iw, ART_H / ih);
+    const sw = W / sc, sh = ART_H / sc;
+    g.drawImage(img, (iw - sw) / 2, (ih - sh) / 2, sw, sh, 0, 0, W, ART_H);
     const lines = card.text.split('\n');
-    g.fillStyle = '#1E2A5A';
+    g.fillStyle = '#1F2433';
     g.textAlign = 'center';
     g.textBaseline = 'middle';
     let size = 22;
@@ -64,7 +69,7 @@
     const mid = ART_H + (H - ART_H - 28) / 2;
     lines.forEach((l, i) => g.fillText(l, W / 2, mid + (i - (lines.length - 1) / 2) * lh));
     g.font = '11px "Gowun Dodum", sans-serif';
-    g.fillStyle = '#4A5585';
+    g.fillStyle = 'rgba(31,36,51,0.6)';
     g.fillText(BRAND, W / 2, H - 16);
     return new Promise((ok) => cv.toBlob(ok, 'image/png'));
   }
@@ -98,14 +103,12 @@
     b.type = 'button';
     b.className = 'chip';
     b.dataset.mood = m.id;
-    b.style.background = m.bg;
     b.setAttribute('aria-pressed', 'false');
     b.textContent = m.label;
     b.addEventListener('click', () => pick(m.id));
     chips.append(b);
   });
 
-  $('preview').innerHTML = cardHtml(all[0]);
 
   $('all').innerHTML = MOODS.map((m) => `
     <div class="group"><h3>${m.label}</h3><div class="grid">

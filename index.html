@@ -13,53 +13,117 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
-    <div class="pebbles" aria-hidden="true">
-      <span class="p p1"></span><span class="p p2"></span><span class="p p3"></span>
-      <span class="p p4"></span><span class="p p5"></span><span class="p p6"></span>
+  <header class="nav">
+    <div class="nav-in">
+      <a class="logo" href="#top"><span class="badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><circle cx="15" cy="9" r="4" fill="#FDE68A"/><path d="M6 18a4 4 0 0 1 0-8 5 5 0 0 1 9.5 1.5A3.3 3.3 0 0 1 16 18Z" fill="#fff"/></svg>
+      </span>다시, 한 장</a>
+      <a class="pill pill-ink" href="#mood">카드 받기</a>
     </div>
-    <p class="brand">다시, 한 장</p>
-    <h1>넘어진 자리에서도,<br>우리는 무언가를<br>줍고 일어나요.</h1>
-    <p class="lead">지금 마음을 고르면, 그 마음에 맞는 응원 카드를 한 장 건네 드려요.</p>
-    <a class="btn btn-main" href="#mood">내 마음에 맞는 카드 받기</a>
-    <figure class="preview">
-      <div class="card card-mini" id="preview"></div>
-      <figcaption>이런 카드를 받을 수 있어요</figcaption>
-    </figure>
   </header>
+
+  <section class="hero" id="top">
+    <p class="eyebrow"><span aria-hidden="true">✦</span> 다시 시작하는 당신에게</p>
+    <h1>넘어진 자리에서도,<br>우리는 무언가를
+      <span class="doodle">줍고<svg viewBox="0 0 120 16" preserveAspectRatio="none" aria-hidden="true"><path d="M3 11 C25 3 40 14 60 8 S100 4 117 9"/></svg></span>
+      일어나요.</h1>
+    <p class="lead">지금 마음을 고르면, 그 마음에 맞는 응원 카드를 한 장 건네 드려요. 마음에 들면 저장하고, 소중한 사람에게 보내 주세요.</p>
+    <a class="pill pill-coral pill-big" href="#mood">내 마음에 맞는 카드 받기</a>
+    <p class="fine">가입 없이, 무료로 바로 받아요.</p>
+  </section>
+
+  <div class="scene" aria-hidden="true">
+    <svg class="hills" viewBox="0 0 1200 200" preserveAspectRatio="none">
+      <path d="M0 80 C200 20 380 90 600 50 C820 10 1000 80 1200 40 V200 H0Z" fill="#BAE6FD"/>
+      <path d="M0 120 C220 70 420 140 640 100 C860 60 1020 120 1200 95 V200 H0Z" fill="#7DD3FC"/>
+      <path d="M0 160 C240 120 460 175 700 145 C900 120 1060 160 1200 140 V200 H0Z" fill="#FDA4AF"/>
+    </svg>
+    <svg class="cloud c1" viewBox="0 0 100 50"><g fill="#fff"><ellipse cx="50" cy="34" rx="44" ry="15"/><circle cx="36" cy="26" r="15"/><circle cx="60" cy="20" r="19"/></g></svg>
+    <svg class="cloud c2" viewBox="0 0 100 50"><g fill="#fff"><ellipse cx="50" cy="34" rx="44" ry="15"/><circle cx="36" cy="26" r="15"/><circle cx="60" cy="20" r="19"/></g></svg>
+    <svg class="cloud c3" viewBox="0 0 100 50"><g fill="#fff"><ellipse cx="50" cy="34" rx="44" ry="15"/><circle cx="36" cy="26" r="15"/><circle cx="60" cy="20" r="19"/></g></svg>
+    <span class="sun"></span>
+
+    <div class="town">
+      <span class="b" style="height:46px;background:#F43F5E"></span>
+      <span class="b" style="height:62px;background:#fff"></span>
+      <span class="b" style="height:38px;background:#0C4A6E"></span>
+      <span class="b" style="height:52px;background:#FB7185"></span>
+    </div>
+    <svg class="tree t1" viewBox="0 0 40 70"><rect x="17" y="52" width="6" height="16" rx="3" fill="#92400E"/><path d="M20 4 L38 56 H2Z" fill="#34D399"/></svg>
+    <svg class="tree t2" viewBox="0 0 40 70"><rect x="17" y="52" width="6" height="16" rx="3" fill="#92400E"/><path d="M20 4 L38 56 H2Z" fill="#10B981"/></svg>
+
+    <!-- 넘어졌다가 새싹을 줍는 사람 -->
+    <svg class="person p-pick" viewBox="0 0 120 120">
+      <path d="M60 68 C52 70 44 66 40 60" stroke="#F43F5E" stroke-width="12" stroke-linecap="round" fill="none"/>
+      <rect x="44" y="56" width="40" height="46" rx="20" fill="#FB7185"/>
+      <circle cx="40" cy="62" r="6" fill="#F5D0B0"/>
+      <g transform="translate(28 66)"><path d="M0 14 V2" stroke="#10B981" stroke-width="3" stroke-linecap="round"/><path d="M0 4 C-8 0 -10 6 -9 9 C-4 9 -1 7 0 4Z M0 2 C7 -4 11 1 10 4 C6 5 2 4 0 2Z" fill="#10B981"/></g>
+      <circle cx="68" cy="38" r="18" fill="#F5D0B0" stroke="#fff" stroke-width="4"/>
+      <path d="M50 34 C52 18 82 16 86 34 C80 26 60 24 50 34Z" fill="#7C3F1D"/>
+      <g class="eyes"><circle cx="62" cy="40" r="2"/><circle cx="74" cy="40" r="2"/></g>
+      <path d="M64 46 Q68 49 72 46" stroke="#1F2433" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </svg>
+    <!-- 손을 흔들며 응원하는 사람 -->
+    <svg class="person p-wave" viewBox="0 0 120 140">
+      <rect x="38" y="60" width="44" height="64" rx="22" fill="#0EA5E9"/>
+      <g class="arm"><rect x="74" y="34" width="12" height="36" rx="6" fill="#0EA5E9" transform="rotate(20 80 66)"/><circle cx="90" cy="36" r="7" fill="#F5D0B0"/></g>
+      <circle cx="60" cy="40" r="20" fill="#F5D0B0" stroke="#fff" stroke-width="4"/>
+      <path d="M40 38 C40 18 80 16 80 36 C74 28 50 26 40 38Z" fill="#1F2433"/>
+      <g class="eyes"><circle cx="53" cy="42" r="2.2"/><circle cx="67" cy="42" r="2.2"/></g>
+      <path d="M54 49 Q60 54 66 49" stroke="#1F2433" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </svg>
+  </div>
 
   <main>
     <section id="mood" class="mood">
       <h2>지금 마음은 어때요?</h2>
+      <p class="sub">가장 가까운 마음 하나를 골라 주세요.</p>
       <div class="chips" id="chips"></div>
+
+      <div class="result" id="result" hidden>
+        <div class="card card-big" id="card" aria-live="polite"></div>
+        <div class="actions">
+          <button class="pill pill-ghost" id="next" type="button">다른 카드</button>
+          <button class="pill pill-sky" id="save" type="button">저장하기</button>
+          <button class="pill pill-coral" id="share" type="button">보내기</button>
+        </div>
+        <p class="toast" id="toast" role="status"></p>
+      </div>
     </section>
 
-    <section id="result" class="result" hidden>
-      <div class="card card-big" id="card" aria-live="polite"></div>
-      <div class="actions">
-        <button class="btn" id="next" type="button">다른 카드</button>
-        <button class="btn" id="save" type="button">저장하기</button>
-        <button class="btn" id="share" type="button">보내기</button>
+    <section class="how">
+      <div class="how-in">
+        <h2>카드를 받는 방법</h2>
+        <ol class="steps">
+          <li><span class="num">1</span><h3>마음 고르기</h3><p>지금 내 마음과 가장 가까운 것을 하나 골라요.</p></li>
+          <li><span class="num">2</span><h3>카드 받기</h3><p>그 마음에 맞는 응원 카드가 한 장 나와요. 다른 카드도 볼 수 있어요.</p></li>
+          <li><span class="num">3</span><h3>저장하고 보내기</h3><p>폰에 이미지로 저장하거나, 소중한 사람에게 바로 보내요.</p></li>
+        </ol>
       </div>
-      <p class="toast" id="toast" role="status"></p>
     </section>
 
     <section class="all">
       <h2>마음별로 모아 보기</h2>
+      <p class="sub">눌러서 크게 볼 수 있어요.</p>
       <div id="all"></div>
     </section>
 
-    <section class="reviews">
-      <h2>받아 본 사람들의 이야기</h2>
-      <p>아직 모으는 중이에요.</p>
+    <section class="banner">
+      <svg class="cloud bc1" viewBox="0 0 100 50"><g fill="#fff"><ellipse cx="50" cy="34" rx="44" ry="15"/><circle cx="36" cy="26" r="15"/><circle cx="60" cy="20" r="19"/></g></svg>
+      <svg class="cloud bc2" viewBox="0 0 100 50"><g fill="#fff"><ellipse cx="50" cy="34" rx="44" ry="15"/><circle cx="36" cy="26" r="15"/><circle cx="60" cy="20" r="19"/></g></svg>
+      <h2>오늘 필요한 한 장, 받아 가세요.</h2>
+      <p>넘어졌던 시간도 당신의 일부예요. 다시 일어나는 당신을 응원해요.</p>
+      <a class="pill pill-cream pill-big" href="#mood">내 마음에 맞는 카드 받기</a>
     </section>
   </main>
 
   <footer>
+    <p><strong>다시, 한 장</strong></p>
     <p>오늘도 한 걸음, 다시 한 장.</p>
   </footer>
 
   <script src="cards.js"></script>
+  <script src="scene.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

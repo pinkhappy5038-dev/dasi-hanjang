@@ -4,8 +4,6 @@ window.MOODS = [
   {
     id: 'fall',
     label: '넘어졌을 때',
-    bg: '#FFF1B8',
-    shapes: ['#FF7AA2', '#3CC9A4', '#5B7CFA'],
     cards: [
       '넘어진 건\n끝이 아니라\n잠깐 쉬어 가는 자리예요.',
       '무릎에 묻은 흙은\n털면 그만이에요.\n당신은 다시 걸을 수 있어요.',
@@ -17,8 +15,6 @@ window.MOODS = [
   {
     id: 'endure',
     label: '버티기 힘들 때',
-    bg: '#DCEFFF',
-    shapes: ['#FF9F43', '#FF7AA2', '#FFE45C'],
     cards: [
       '서툰 시간도\n당신을 키우는 중이에요.',
       '아직 잘하지 못하는 건\n아직 배우는 중이라는\n뜻이에요.',
@@ -30,8 +26,6 @@ window.MOODS = [
   {
     id: 'rush',
     label: '조급하고 흔들릴 때',
-    bg: '#DFF5E6',
-    shapes: ['#FF7AA2', '#5B7CFA', '#FFB020'],
     cards: [
       '남의 속도를 재지 말고\n내 걸음을 세어 봐요.',
       '모든 일에 물을 줄 순 없어요.\n정말 아끼는 것에만\n주기로 해요.',
@@ -43,8 +37,6 @@ window.MOODS = [
   {
     id: 'lost',
     label: '나를 잃어버린 것 같을 때',
-    bg: '#FFE3EC',
-    shapes: ['#5B7CFA', '#FFB020', '#3CC9A4'],
     cards: [
       '길을 잃었다고 느낄 때\n진짜 내 길을\n찾기 시작해요.',
       '당신은 생각보다\n훨씬 많은 것을\n이겨 내 왔어요.',
